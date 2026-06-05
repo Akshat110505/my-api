@@ -11,8 +11,10 @@ from scipy.interpolate import RegularGridInterpolator
 # ==========================================
 # CONFIG
 # ==========================================
-OUTPUT_DIR = r"C:\wind_field_project\outputs"
-TIF_PATH   = r"C:\wind_field_project\outputs\S1_preprocessed.tif"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+OUTPUT_DIR = BASE_DIR
+TIF_PATH = os.path.join(BASE_DIR, "S1_preprocessed.tif")
 
 app = FastAPI(
     title="SAR Wind Field API",
